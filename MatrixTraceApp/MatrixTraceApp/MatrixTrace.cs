@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MatrixTraceApp
 {
-    internal class MatrixTrace
+    public class MatrixTrace
     {
+
     }
 }
