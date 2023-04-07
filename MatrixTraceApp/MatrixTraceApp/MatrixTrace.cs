@@ -23,7 +23,7 @@ namespace MatrixTraceApp
 
         }
 
-        private void GetSnailElementsMatrix(int[,] matrix)
+        public void GetSnailElementsMatrix(int[,] matrix)
         {
 
         }
