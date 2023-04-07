@@ -14,5 +14,47 @@ namespace MatrixTraceAppTest
             //int[] output = matrixTrace.GetSnailElementsMatrix(input);
             //Assert.AreEqual(expected, output);
         }
+
+        [TestMethod]
+        public void MatrixTrace()
+        {
+            int[,] input;
+            int expected;
+            MatrixTrace matrixTrace = new MatrixTrace();
+            //int output;
+            //Assert.AreEqual(expected, output);
+        }
+
+        [TestMethod]
+        public void SnailElementsMatrix()
+        {
+            int[,] input;
+            int[] expected;
+            MatrixTrace matrixTrace = new MatrixTrace();
+            //int[] output;
+            //Assert.AreEqual(expected, output);
+        }
+
+        [TestMethod]
+        public void MainDiagonal()
+        {
+            int[,] input;
+            int[] expected;
+            MatrixTrace matrixTrace = new MatrixTrace();
+            //int[] output;
+            //Assert.AreEqual(expected, output);
+        }
+
+        [TestMethod]
+        public void CheckIsEmpty()
+        {
+
+        }
+
+        [TestMethod]
+        public void CheckIsNull()
+        {
+
+        }
     }
 }
