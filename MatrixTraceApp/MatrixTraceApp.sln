@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixTraceApp", "MatrixTraceApp\MatrixTraceApp.csproj", "{B2508A24-04DF-4B36-9C00-42476FE1C7BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixTraceAppTest", "MatrixTraceAppTest\MatrixTraceAppTest.csproj", "{F509D8B7-45C0-4365-979D-E2EC395DDEA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B2508A24-04DF-4B36-9C00-42476FE1C7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2508A24-04DF-4B36-9C00-42476FE1C7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2508A24-04DF-4B36-9C00-42476FE1C7BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F509D8B7-45C0-4365-979D-E2EC395DDEA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F509D8B7-45C0-4365-979D-E2EC395DDEA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F509D8B7-45C0-4365-979D-E2EC395DDEA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F509D8B7-45C0-4365-979D-E2EC395DDEA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
