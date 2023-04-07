@@ -23,9 +23,14 @@ namespace MatrixTraceApp
 
         }
 
-        public void GetSnailElementsMatrix(int[,] matrix)
+        public void PrintMainDiagonal(int[] matrix)
         {
 
+        }
+
+        private int[] GetSnailElementsMatrix(int[,] matrix)
+        {
+            return new int[0];
         }
 
         private void CreateRandomMatrix(int columns, int lines)
@@ -33,7 +38,12 @@ namespace MatrixTraceApp
 
         }
 
-        private int GetMatrixTrace(int[,] matrix)
+        private int[] GetMainDiagonal(int[,] matrix)
+        {
+            return new int[0];
+        }
+
+        private int GetMatrixTrace(int[] mainDiagonal)
         {
             return 0;
         }
