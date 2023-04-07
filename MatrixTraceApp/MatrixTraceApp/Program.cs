@@ -1,4 +1,6 @@
-﻿namespace MatrixTraceApp
+﻿using System;
+
+namespace MatrixTraceApp
 {
     internal class Program
     {
