@@ -16,7 +16,7 @@ namespace MatrixTraceApp
             {
                 for (int j = 0; j < columns; j++)
                 {
-                    matrix[i, j] = random.Next(100);
+                    matrix[i, j] = random.Next(10);
                 }
             }
             return matrix;
@@ -29,12 +29,22 @@ namespace MatrixTraceApp
 
         private int[] GetMainDiagonal(int[,] matrix)
         {
-            return new int[0];
+            int[] mainDiagonal = new int[matrix.GetLength(0)];
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                mainDiagonal[i] = matrix[i, i];
+            }
+            return mainDiagonal;
         }
 
         private int[] GetSecondaryDiagonal(int[,] matrix)
         {
-            return new int[0];
+            int[] secondaryDiagonal = new int[matrix.GetLength(0)];
+            for (int j = matrix.GetLength(0) - 1, i = 0; j >= 0; i++, j--)
+            {
+                secondaryDiagonal[i] = matrix[i, j];
+            }
+            return secondaryDiagonal;
         }
 
         private int GetMatrixTrace(int[] mainDiagonal)

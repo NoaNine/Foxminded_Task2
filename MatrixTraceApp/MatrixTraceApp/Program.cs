@@ -15,7 +15,8 @@ namespace MatrixTraceApp
             int colums = Convert.ToInt32(Console.ReadLine());
             int[,] matrix = matrixTrace.CreateRandomMatrix(lines, colums);
             print.PrintMatrix(matrix);
-            int[,] input = new int[,] { { 1, 2, 3, 4 }, { 8, 7, 6, 5 }, { 4, 3, 2, 9, } };
+            int[,] input1 = new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2, } };
+            int[,] input2 = new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2, } };
         }
     }
 }
