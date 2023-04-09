@@ -8,7 +8,7 @@ namespace MatrixTraceApp
 {
     public class MatrixTrace
     {
-        public int[,] CreateRandomMatrix(int lines, int columns)
+        public int[,] CreateRandomMatrix(int lines, int columns, int numberRange)
         {
             int[,] matrix = new int[lines, columns];
             Random random = new Random();
@@ -16,18 +16,18 @@ namespace MatrixTraceApp
             {
                 for (int j = 0; j < columns; j++)
                 {
-                    matrix[i, j] = random.Next(10);
+                    matrix[i, j] = random.Next(numberRange);
                 }
             }
             return matrix;
         }
 
-        private int[] GetSnailElements(int[,] matrix)
+        public int[] GetSnailElements(int[,] matrix)
         {
             return new int[0];
         }
 
-        private int[] GetMainDiagonal(int[,] matrix)
+        public int[] GetMainDiagonal(int[,] matrix)
         {
             int[] mainDiagonal = new int[matrix.GetLength(0)];
             for (int i = 0; i < matrix.GetLength(0); i++)
@@ -37,17 +37,7 @@ namespace MatrixTraceApp
             return mainDiagonal;
         }
 
-        private int[] GetSecondaryDiagonal(int[,] matrix)
-        {
-            int[] secondaryDiagonal = new int[matrix.GetLength(0)];
-            for (int j = matrix.GetLength(0) - 1, i = 0; j >= 0; i++, j--)
-            {
-                secondaryDiagonal[i] = matrix[i, j];
-            }
-            return secondaryDiagonal;
-        }
-
-        private int GetMatrixTrace(int[] mainDiagonal)
+        public int GetMatrixTrace(int[] mainDiagonal)
         {
             return 0;
         }

@@ -32,13 +32,10 @@ namespace MatrixTraceApp
 
         public void PrintMainDiagonal(int[] matrix)
         {
-
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                Console.WriteLine(matrix[i] + " ");
+            }
         }
-
-        public void PrintSecondaryDiagonal(int[] matrix)
-        {
-
-        }
-
     }
 }
