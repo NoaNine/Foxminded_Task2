@@ -8,26 +8,6 @@ namespace MatrixTraceApp
 {
     public class MatrixTrace
     {
-        public void PrintSnailElementsMatrix(int[] arraySnailElements)
-        {
-
-        }
-
-        public void PrintMatrixTrace(int sum)
-        {
-
-        }
-
-        public void PrintMatrix(int[,] matrix)
-        {
-
-        }
-
-        public void PrintMainDiagonal(int[] matrix)
-        {
-
-        }
-
         private int[] GetSnailElementsMatrix(int[,] matrix)
         {
             return new int[0];
