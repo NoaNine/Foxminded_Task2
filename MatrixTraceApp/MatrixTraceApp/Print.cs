@@ -6,7 +6,39 @@ using System.Threading.Tasks;
 
 namespace MatrixTraceApp
 {
-    internal class Print
+    public class Print
     {
+        public void PrintSnailElementsMatrix(int[] arraySnailElements)
+        {
+
+        }
+
+        public void PrintMatrixTrace(int sum)
+        {
+
+        }
+
+        public void PrintMatrix(int[,] matrix)
+        {
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write(matrix[i,j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public void PrintMainDiagonal(int[] matrix)
+        {
+
+        }
+
+        public void PrintSecondaryDiagonal(int[] matrix)
+        {
+
+        }
+
     }
 }
