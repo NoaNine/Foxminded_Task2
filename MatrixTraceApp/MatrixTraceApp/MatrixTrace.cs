@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MatrixOperations;
 
 namespace MatrixTraceApp
 {
     public class MatrixTrace
     {
-        public int[,] CreateRandomMatrix(int lines, int columns, int numberRange)
+        public void CreateRandomMatrix(int lines, int columns, int numberRange)
         {
             int[,] matrix = new int[lines, columns];
             Random random = new Random();
@@ -19,27 +20,16 @@ namespace MatrixTraceApp
                     matrix[i, j] = random.Next(numberRange);
                 }
             }
-            return matrix;
-        }
-
-        public int[] GetSnailElements(int[,] matrix)
-        {
-            return new int[0];
-        }
-
-        public int[] GetMainDiagonal(int[,] matrix)
-        {
-            int[] mainDiagonal = new int[matrix.GetLength(0)];
-            for (int i = 0; i < matrix.GetLength(0); i++)
-            {
-                mainDiagonal[i] = matrix[i, i];
-            }
-            return mainDiagonal;
         }
 
         public int GetMatrixTrace(int[] mainDiagonal)
         {
-            return 0;
+            int sum = 0;
+            for (int i = 0; i < mainDiagonal.Length; i++)
+            {
+                sum += mainDiagonal[i];
+            }
+            return sum;
         }
     }
 }

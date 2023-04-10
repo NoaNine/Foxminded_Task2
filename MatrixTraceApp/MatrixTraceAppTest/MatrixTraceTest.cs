@@ -41,7 +41,7 @@ namespace MatrixTraceAppTest
             int[,] input = new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2 } };
             int[] expected = new int[] { 1, 7, 2 };
             MatrixTrace matrixTrace = new MatrixTrace();
-            int[] output = matrixTrace.GetMainDiagonal(input);
+            int[] output;
             //Assert.AreEqual(expected, output);
         }
 

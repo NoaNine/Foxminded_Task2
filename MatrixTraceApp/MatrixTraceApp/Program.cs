@@ -1,4 +1,5 @@
 ﻿using System;
+using MatrixOperations;
 
 namespace MatrixTraceApp
 {
@@ -7,6 +8,7 @@ namespace MatrixTraceApp
         static void Main(string[] args)
         {
             MatrixTrace matrixTrace = new MatrixTrace();
+            DataMatrix dataMatrix = new DataMatrix();
             Print print = new Print();
             Console.WriteLine(Properties.Messages.Greeting);
             Console.WriteLine("Input lines matrix");
@@ -18,8 +20,8 @@ namespace MatrixTraceApp
             //print.PrintMatrix(matrix);
             int[,] input1 = new int[,] { { 1, 2, 3, 4}, { 8, 7, 6, 5 }, { 4, 3, 2, 9 } };
             int[,] input2 = new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2, } };
-            int[] mainDiagonal = matrixTrace.GetMainDiagonal(input1);
-            print.PrintMainDiagonal(mainDiagonal);
+            int[] mainDiagonal = dataMatrix.GetMainDiagonal(input1);
+            print.PrintArray(mainDiagonal);
         }
     }
 }

@@ -8,17 +8,15 @@ namespace MatrixTraceApp
 {
     public class Print
     {
-        public void PrintSnailElementsMatrix(int[] arraySnailElements)
+        public void PrintArray(int[] snailElements)
         {
-
+            for (int i = 0; i < snailElements.Length; i++)
+            {
+                Console.WriteLine(snailElements[i] + " ");
+            }
         }
 
-        public void PrintMatrixTrace(int sum)
-        {
-
-        }
-
-        public void PrintMatrix(int[,] matrix)
+        public void PrintTwoDimensionalArray(int[,] matrix)
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
@@ -27,14 +25,6 @@ namespace MatrixTraceApp
                     Console.Write(matrix[i,j] + " ");
                 }
                 Console.WriteLine();
-            }
-        }
-
-        public void PrintMainDiagonal(int[] matrix)
-        {
-            for (int i = 0; i < matrix.GetLength(0); i++)
-            {
-                Console.WriteLine(matrix[i] + " ");
             }
         }
     }
