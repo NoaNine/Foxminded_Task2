@@ -8,11 +8,11 @@ namespace MatrixTraceApp
 {
     public class Print
     {
-        public void PrintArray(int[] snailElements)
+        public void PrintArray(int[] array)
         {
-            for (int i = 0; i < snailElements.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                Console.WriteLine(snailElements[i] + " ");
+                Console.WriteLine(array[i] + " ");
             }
         }
 

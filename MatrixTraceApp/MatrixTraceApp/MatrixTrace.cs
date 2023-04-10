@@ -9,25 +9,32 @@ namespace MatrixTraceApp
 {
     public class MatrixTrace
     {
-        public void CreateRandomMatrix(int lines, int columns, int numberRange)
+        public int[,] MatrixWithRandomNumbers(int rows, int columns, int numberRange)
         {
-            int[,] matrix = new int[lines, columns];
+            int[,] matrix = new int[rows, columns];
             Random random = new Random();
-            for (int i = 0; i < lines; i++)
+            for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
                 {
                     matrix[i, j] = random.Next(numberRange);
                 }
             }
+            return matrix;
         }
 
-        public int GetMatrixTrace(int[] mainDiagonal)
+        public int GetMatrixTrace(int[,] matrix)
         {
-            int sum = 0;
-            for (int i = 0; i < mainDiagonal.Length; i++)
+            if (matrix.GetLength(0) < 2 || matrix.GetLength(1) < 2)
             {
-                sum += mainDiagonal[i];
+                return 0;
+            }
+            DataMatrix dataMatrix = new DataMatrix();
+            int[] elementsMaidDiagonal = dataMatrix.GetMainDiagonal(matrix);
+            int sum = 0;
+            for (int i = 0; i < elementsMaidDiagonal.Length; i++)
+            {
+                sum += elementsMaidDiagonal[i];
             }
             return sum;
         }
