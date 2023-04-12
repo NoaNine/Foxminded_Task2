@@ -1,5 +1,5 @@
 ﻿using System;
-using MatrixOperations;
+using DataMatrix;
 
 namespace MatrixTraceApp
 {
@@ -8,14 +8,14 @@ namespace MatrixTraceApp
         static void Main(string[] args)
         {
             MatrixTrace matrixTrace = new MatrixTrace();
-            DataMatrix dataMatrix = new DataMatrix();
+            MatrixOperations matrix = new MatrixOperations();
             Print print = new Print();
             Console.WriteLine(Properties.Messages.Greeting);
             Console.WriteLine("Input rows matrix");
             int rows = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Input colums matrix");
             int colums = Convert.ToInt32(Console.ReadLine());
-            int numberRandomRange = 10;
+            int range = 100;
         }
     }
-}
+}   

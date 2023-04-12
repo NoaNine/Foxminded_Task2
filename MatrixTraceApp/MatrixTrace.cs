@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MatrixOperations;
+using DataMatrix;
 
 namespace MatrixTraceApp
 {
@@ -29,8 +29,8 @@ namespace MatrixTraceApp
             {
                 return 0;
             }
-            DataMatrix dataMatrix = new DataMatrix();
-            int[] elementsMaidDiagonal = dataMatrix.GetMainDiagonal(matrix);
+            MatrixOperations matrixArray = new MatrixOperations();
+            int[] elementsMaidDiagonal = matrixArray.GetMainDiagonal(matrix);
             int sum = 0;
             for (int i = 0; i < elementsMaidDiagonal.Length; i++)
             {

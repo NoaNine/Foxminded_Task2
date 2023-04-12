@@ -1,6 +1,6 @@
-﻿namespace MatrixOperations
+﻿namespace DataMatrix
 {
-    public class DataMatrix
+    public class MatrixOperations
     {
         public int[] GetElementsInSpiralOrder(int[,] matrix)
         {
@@ -9,7 +9,7 @@
                 return new int[0];
             }
             int[] elementsInSpiralOrder = new int[matrix.GetLength(0)];
-            return elementsInSpiralOrder; 
+            return elementsInSpiralOrder;
         }
 
         public int[] GetMainDiagonal(int[,] matrix)
@@ -28,7 +28,7 @@
             }
             if (matrix.GetLength(0) != matrix.GetLength(1))
             {
-                
+
             }
             return mainDiagonal;
         }
@@ -49,9 +49,10 @@
             }
             if (matrix.GetLength(0) != matrix.GetLength(1))
             {
-                
+
             }
             return secondaryDiagonal;
         }
+
     }
 }

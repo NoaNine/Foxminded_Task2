@@ -1,7 +1,9 @@
-namespace MatrixOperationsTest
+using DataMatrix;
+
+namespace DataMatrixTest
 {
     [TestClass]
-    public class DataMatrixTest
+    public class MatrixOperationsTest
     {
         [TestMethod]
         public void ElementsInSpiralOrder()
@@ -32,5 +34,6 @@ namespace MatrixOperationsTest
         {
 
         }
+
     }
 }
