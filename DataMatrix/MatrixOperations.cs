@@ -23,12 +23,14 @@ namespace DataMatrix
                 for (i = startingColumnIndex; i < endingColumnIndex; i++)
                 {
                     elementsInSpiralOrder[index] = matrix[startingRowIndex, i];
+                    index++;
                 }
                 startingRowIndex++;
 
                 for (i = startingRowIndex; i < endingRowIndex; i++)
                 {
                     elementsInSpiralOrder[index] = matrix[i, endingColumnIndex - 1];
+                    index++;
                 }
                 endingColumnIndex--;
 
@@ -37,6 +39,7 @@ namespace DataMatrix
                     for (i = endingColumnIndex - 1; i >= startingColumnIndex; i--)
                     {
                         elementsInSpiralOrder[index] = matrix[endingRowIndex - 1, i];
+                        index++;
                     }
                     endingRowIndex--;
                 }
@@ -46,6 +49,7 @@ namespace DataMatrix
                     for (i = endingRowIndex - 1; i >= startingRowIndex; i--)
                     {
                         elementsInSpiralOrder[index] = matrix[i, startingColumnIndex];
+                        index++;
                     }
                     startingColumnIndex++;
                 }
