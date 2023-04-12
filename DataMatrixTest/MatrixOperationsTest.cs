@@ -5,10 +5,14 @@ namespace DataMatrixTest
     [TestClass]
     public class MatrixOperationsTest
     {
-        [TestMethod]
-        public void ElementsInSpiralOrder()
+        [DataTestMethod]
+        [DataRow(new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2 } }, new int[] { 1, 2, 3, 6, 2, 3, 4, 8, 7 })]
+        [DataRow(new int[,] { { 1, 2, 3, 4, 5 }, { 8, 7, 6, 2, 1 }, { 4, 3, 2, 8, 5 } }, new int[] { 1, 2, 3, 4, 5, 1, 5, 8, 2, 3, 4, 8, 7, 6, 2 })]
+        public void ElementsInSpiralOrder(int[,] input, int[] expected)
         {
-
+            MatrixOperations matrixTrace = new MatrixOperations();
+            int[] output = matrixTrace.GetMainDiagonal(input);
+            CollectionAssert.AreEqual(expected, output);
         }
 
         [DataTestMethod]

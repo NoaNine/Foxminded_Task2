@@ -10,13 +10,13 @@ namespace DataMatrix
             {
                 return new int[0];
             }
-            int[] elementsInSpiralOrder = new int[matrix.GetLength(0)];
+            int[] elementsInSpiralOrder = new int[matrix.GetLength(0)*matrix.GetLength(1)];
             int index = 0;
             int i;
             int startingColumnIndex = 0;
-            int endingColumnIndex = 0;
+            int endingColumnIndex = matrix.GetLength(0);
             int startingRowIndex = 0;
-            int endingRowIndex = 0;
+            int endingRowIndex = matrix.GetLength(1);
 
             while (startingRowIndex < endingRowIndex && startingColumnIndex < endingColumnIndex)
             {
