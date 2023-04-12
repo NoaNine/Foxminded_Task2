@@ -8,9 +8,47 @@ namespace MatrixTraceApp
 {
     public class Matrix
     {
-        private int colums;
-        private int rows;
+        private int _colums;
+        private int _rows;
         public int[,] matrix;
+
+        public int Colums
+        {
+            get
+            {
+                return _colums;
+            }
+            private set
+            {
+                if (value < 2)
+                {
+                    Console.WriteLine("Matrix must have at least 2 colums");
+                }
+                else
+                {
+                    _colums = value;
+                }
+            }
+        }
+
+        public int Rows
+        {
+            get
+            {
+                return _rows;
+            }
+            private set
+            {
+                if (value < 2)
+                {
+                    Console.WriteLine("Matrix must have at least 2 rows");
+                }
+                else
+                {
+                    _rows = value;
+                }
+            }
+        }
 
         public Matrix(int colums, int rows)
         {
@@ -21,44 +59,6 @@ namespace MatrixTraceApp
         public Matrix(int[,] matrix)
         {
             this.matrix = matrix;
-        }
-
-        public int Colums
-        {
-            get
-            {
-                return colums;
-            }
-            private set
-            {
-                if (value < 2)
-                {
-                    Console.WriteLine("Matrix must have at least 2 colums");
-                }
-                else
-                {
-                    colums = value;
-                }
-            }
-        }
-
-        public int Rows
-        {
-            get
-            {
-                return rows;
-            }
-            private set
-            {
-                if (value < 2)
-                {
-                    Console.WriteLine("Matrix must have at least 2 rows");
-                }
-                else
-                {
-                    rows = value;
-                }
-            }
         }
     }
 }
