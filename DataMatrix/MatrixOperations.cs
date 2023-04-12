@@ -19,16 +19,10 @@
                 return new int[0];
             }
             int[] mainDiagonal = new int[matrix.GetLength(0)];
-            if (matrix.GetLength(0) == matrix.GetLength(1))
+            int length = matrix.GetLength(0) <= matrix.GetLength(1) ? matrix.GetLength(0) : matrix.GetLength(1);
+            for (int i = 0; i < length; i++)
             {
-                for (int i = 0; i < matrix.GetLength(0); i++)
-                {
-                    mainDiagonal[i] = matrix[i, i];
-                }
-            }
-            if (matrix.GetLength(0) != matrix.GetLength(1))
-            {
-
+                mainDiagonal[i] = matrix[i, i];
             }
             return mainDiagonal;
         }
@@ -40,16 +34,13 @@
                 return new int[0];
             }
             int[] secondaryDiagonal = new int[matrix.GetLength(0)];
+            int length = matrix.GetLength(0) <= matrix.GetLength(1) ? matrix.GetLength(0) : matrix.GetLength(1);
             if (matrix.GetLength(0) == matrix.GetLength(1))
             {
-                for (int j = matrix.GetLength(0) - 1, i = 0; j >= 0; i++, j--)
+                for (int j = length - 1, i = 0; j >= 0; i++, j--)
                 {
                     secondaryDiagonal[i] = matrix[i, j];
                 }
-            }
-            if (matrix.GetLength(0) != matrix.GetLength(1))
-            {
-
             }
             return secondaryDiagonal;
         }
