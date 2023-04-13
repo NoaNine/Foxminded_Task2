@@ -52,8 +52,11 @@ namespace MatrixTraceApp
 
         public Matrix(int colums, int rows)
         {
-            Colums = colums;
-            Rows = rows;
+            if (colums >= 2 && rows >= 2)
+            {
+                Colums = colums;
+                Rows = rows;
+            }
         }
 
         public Matrix(int[,] matrix)

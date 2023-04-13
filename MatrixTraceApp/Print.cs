@@ -16,13 +16,13 @@ namespace MatrixTraceApp
             }
         }
 
-        public void PrintTwoDimensionalArray(int[,] matrix)
+        public void PrintTwoDimensionalArray(Matrix matrix)
         {
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            for (int i = 0; i < matrix.Colums; i++)
             {
-                for (int j = 0; j < matrix.GetLength(1); j++)
+                for (int j = 0; j < matrix.Rows; j++)
                 {
-                    Console.Write(matrix[i,j] + " ");
+                    //Console.Write(matrix[i,j] + " ");
                 }
                 Console.WriteLine();
             }

@@ -61,11 +61,29 @@ namespace MatrixTraceApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hello.
+        ///   Looks up a localized string similar to Hi, App &quot;MatrixTrace&quot; and more. Developer Oleksandr Havlytskyi 2023.
         /// </summary>
         internal static string Greeting {
             get {
                 return ResourceManager.GetString("Greeting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input columns matrix.
+        /// </summary>
+        internal static string InputCols {
+            get {
+                return ResourceManager.GetString("InputCols", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input rows matrix.
+        /// </summary>
+        internal static string InputRows {
+            get {
+                return ResourceManager.GetString("InputRows", resourceCulture);
             }
         }
     }

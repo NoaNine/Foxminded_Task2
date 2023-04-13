@@ -118,6 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Greeting" xml:space="preserve">
-    <value>Hello</value>
+    <value>Hi, App "MatrixTrace" and more. Developer Oleksandr Havlytskyi 2023</value>
+    <comment>head</comment>
+  </data>
+  <data name="InputCols" xml:space="preserve">
+    <value>Input columns matrix</value>
+    <comment>input data</comment>
+  </data>
+  <data name="InputRows" xml:space="preserve">
+    <value>Input rows matrix</value>
+    <comment>input data</comment>
   </data>
 </root>
