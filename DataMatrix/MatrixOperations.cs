@@ -4,19 +4,19 @@ namespace DataMatrix
 {
     public class MatrixOperations
     {
-        public int[] GetElementsInSpiralOrder(int[,] matrix)
+        public int[] GetElementsInSpiralOrder(Matrix matrix)
         {
-            if (matrix.GetLength(0) < 2 || matrix.GetLength(1) < 2)
+            if (matrix.Rows < 2 || matrix.Cols < 2)
             {
                 return new int[0];
             }
-            int[] elementsInSpiralOrder = new int[matrix.GetLength(0)*matrix.GetLength(1)];
+            int[] elementsInSpiralOrder = new int[matrix.Rows * matrix.Cols];
             int index = 0;
             int i;
             int startingColumnIndex = 0;
-            int endingColumnIndex = matrix.GetLength(0);
+            int endingColumnIndex = matrix.Rows;
             int startingRowIndex = 0;
-            int endingRowIndex = matrix.GetLength(1);
+            int endingRowIndex = matrix.Cols;
 
             while (startingRowIndex < endingRowIndex && startingColumnIndex < endingColumnIndex)
             {
@@ -57,48 +57,41 @@ namespace DataMatrix
             return elementsInSpiralOrder;
         }
 
-        public int[] GetMainDiagonal(int[,] matrix)
+        public int[] GetMainDiagonal(Matrix matrix)
         {
-            int[] mainDiagonal = new int[matrix.GetLength(0)];
-            int length = matrix.GetLength(0) <= matrix.GetLength(1) ? matrix.GetLength(0) : matrix.GetLength(1);
+            int length = matrix.Rows <= matrix.Cols ? matrix.Rows : matrix.Cols;
+            int[] mainDiagonal = new int[length];
             for (int i = 0; i < length; i++)
             {
                 mainDiagonal[i] = matrix[i, i];
             }
             return mainDiagonal;
-            //try
-            //{
-            //    if (matrix.GetLength(0) < 2 || matrix.GetLength(1) < 2)
-            //    {
-            //        throw new Exception("Matrix must not be less than 2x2");
-            //    }
-            //    int[] mainDiagonal = new int[matrix.GetLength(0)];
-            //    int length = matrix.GetLength(0) <= matrix.GetLength(1) ? matrix.GetLength(0) : matrix.GetLength(1);
-            //    for (int i = 0; i < length; i++)
-            //    {
-            //        mainDiagonal[i] = matrix[i, i];
-            //    }
-            //    return mainDiagonal;
-            //}
-            //catch (Exception ex)
-            //{
-            //    return ex.Message;
-            //}
         }
 
-        public int[] GetSecondaryDiagonal(int[,] matrix)
+        public int[] GetSecondaryDiagonal(Matrix matrix)
         {
-            int[] secondaryDiagonal = new int[matrix.GetLength(0)];
-            int length = matrix.GetLength(0) <= matrix.GetLength(1) ? matrix.GetLength(0) : matrix.GetLength(1);
-            if (matrix.GetLength(0) == matrix.GetLength(1))
+            int length = matrix.Rows <= matrix.Cols ? matrix.Rows : matrix.Cols;
+            int[] secondaryDiagonal = new int[length];
+            for (int j = length - 1, i = 0; j >= 0; i++, j--)
             {
-                for (int j = length - 1, i = 0; j >= 0; i++, j--)
-                {
-                    secondaryDiagonal[i] = matrix[i, j];
-                }
+                secondaryDiagonal[i] = matrix[i, j];
             }
             return secondaryDiagonal;
         }
 
+        public int GetMatrixTrace(Matrix matrix)
+        {
+            if (matrix.Rows < 2 || matrix.Cols < 2)
+            {
+                return 0;
+            }
+            int sum = 0;
+            int length = matrix.Rows <= matrix.Cols ? matrix.Rows : matrix.Cols;
+            for (int i = 0; i < length; i++)
+            {
+                sum += matrix[i, i];
+            }
+            return sum;
+        }
     }
 }

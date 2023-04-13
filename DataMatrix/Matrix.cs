@@ -4,32 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatrixTraceApp
+namespace DataMatrix
 {
     public class Matrix
     {
-        private int _colums;
         private int _rows;
-        public int[,] matrix;
-
-        public int Colums
-        {
-            get
-            {
-                return _colums;
-            }
-            private set
-            {
-                if (value < 2)
-                {
-                    Console.WriteLine("Matrix must have at least 2 colums");
-                }
-                else
-                {
-                    _colums = value;
-                }
-            }
-        }
+        private int _cols;
+        private int[,] _matrix;
 
         public int Rows
         {
@@ -50,18 +31,55 @@ namespace MatrixTraceApp
             }
         }
 
-        public Matrix(int colums, int rows)
+        public int Cols
         {
-            if (colums >= 2 && rows >= 2)
+            get
             {
-                Colums = colums;
+                return _cols;
+            }
+            private set
+            {
+                if (value < 2)
+                {
+                    Console.WriteLine("Matrix must have at least 2 colums");
+                }
+                else
+                {
+                    _cols = value;
+                }
+            }
+        }
+
+        public int this[int i, int j]
+        {
+            get
+            {
+                return _matrix[i, j];
+            }
+            set
+            {
+                _matrix[i, j] = value;
+            }
+        }
+
+        public Matrix(int rows, int cols)
+        {
+            if (rows >= 2 && cols >= 2)
+            {
                 Rows = rows;
+                Cols = cols;
+                _matrix = new int[Rows, Cols];
             }
         }
 
         public Matrix(int[,] matrix)
         {
-            this.matrix = matrix;
+            if (matrix.GetLength(0) >= 2 && matrix.GetLength(1) >= 2)
+            {
+                Rows = matrix.GetLength(0);
+                Cols = matrix.GetLength(1);
+                _matrix = matrix;
+            }
         }
     }
 }

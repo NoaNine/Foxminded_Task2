@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataMatrix;
 
 namespace MatrixTraceApp
 {
@@ -12,17 +13,18 @@ namespace MatrixTraceApp
         {
             for (int i = 0; i < array.Length; i++)
             {
-                Console.WriteLine(array[i] + " ");
+                Console.Write(array[i] + " ");
             }
+            Console.WriteLine();
         }
 
         public void PrintTwoDimensionalArray(Matrix matrix)
         {
-            for (int i = 0; i < matrix.Colums; i++)
+            for (int i = 0; i < matrix.Cols; i++)
             {
                 for (int j = 0; j < matrix.Rows; j++)
                 {
-                    //Console.Write(matrix[i,j] + " ");
+                    Console.Write(matrix[i,j] + " ");
                 }
                 Console.WriteLine();
             }

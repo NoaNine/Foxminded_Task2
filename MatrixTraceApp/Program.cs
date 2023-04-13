@@ -7,41 +7,30 @@ namespace MatrixTraceApp
     {
         static void Main(string[] args)
         {
-            MatrixTrace matrixTrace = new MatrixTrace();
             Console.WriteLine(Properties.Messages.Greeting);
 
-            Console.WriteLine(Properties.Messages.InputRows);
-            string inputRows = Console.ReadLine();
-            int rows;
-            while (true)
-            {
-                if (int.TryParse(inputRows, out rows) && rows > 0)
-                {
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Must be only a positive number");
-                    inputRows = Console.ReadLine();
-                }
-            }
+            InputData inputData = new InputData();
+            int rows = inputData.InputRowsNumber();
+            int cols = inputData.InputColsNumber();
 
-            Console.WriteLine(Properties.Messages.InputCols);
-            string inputCols = Console.ReadLine();
-            int cols;
-            while (true)
-            {
-                if (int.TryParse(inputCols, out cols) && cols > 0)
-                {
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Must be only a positive number");
-                }
-            }
+            Matrix matrix = new Matrix(rows, cols);
+
             int startRange = 0;
             int endRange = 100;
+            FillMatrix fillMatrix = new FillMatrix(startRange, endRange);
+            fillMatrix.GetFilledMatrixWithRandomNumbers(matrix);
+
+            Print print = new Print();
+            print.PrintTwoDimensionalArray(matrix);
+
+            MatrixOperations matrixOperations = new MatrixOperations();
+
+            Console.WriteLine("Main diagonal: ");
+            print.PrintArray(matrixOperations.GetMainDiagonal(matrix));
+            Console.WriteLine("Matrix trace: ");
+            Console.WriteLine(matrixOperations.GetMatrixTrace(matrix));
+            Console.WriteLine("Snail shells elements: ");
+            print.PrintArray(matrixOperations.GetElementsInSpiralOrder(matrix));
         }
     }
 }

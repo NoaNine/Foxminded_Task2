@@ -86,5 +86,14 @@ namespace MatrixTraceApp.Properties {
                 return ResourceManager.GetString("InputRows", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The application generates a random matrix and returns some information about it.
+        /// </summary>
+        internal static string Instructions {
+            get {
+                return ResourceManager.GetString("Instructions", resourceCulture);
+            }
+        }
     }
 }

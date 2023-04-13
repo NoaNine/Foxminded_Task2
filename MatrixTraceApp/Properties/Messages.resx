@@ -129,4 +129,8 @@
     <value>Input rows matrix</value>
     <comment>input data</comment>
   </data>
+  <data name="Instructions" xml:space="preserve">
+    <value>The application generates a random matrix and returns some information about it</value>
+    <comment>Instructions</comment>
+  </data>
 </root>

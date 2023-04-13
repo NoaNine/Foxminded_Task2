@@ -4,26 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MatrixTraceApp
+namespace DataMatrix
 {
     public class FillMatrix
     {
         private int startRange;
         private int endRange;
 
-        public FillMatrix(int startRange, int endRange) 
+        public FillMatrix(int startRange, int endRange)
         {
             this.startRange = startRange;
             this.endRange = endRange;
-        }  
+        }
 
-        public int[,] GetFilledMatrixWithRandomNumbers(int[,] matrix)
+        public Matrix GetFilledMatrixWithRandomNumbers(Matrix matrix)
         {
-            int[,] filledMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
-            Random random = new Random();
-            for (int i = 0; i < filledMatrix.GetLength(0); i++)
+            if (matrix.Rows < 2 || matrix.Cols < 2)
             {
-                for (int j = 0; j < filledMatrix.GetLength(1); j++)
+                return matrix;
+            }
+            Random random = new Random();
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                for (int j = 0; j < matrix.Cols; j++)
                 {
                     matrix[i, j] = random.Next(startRange, endRange);
                 }
