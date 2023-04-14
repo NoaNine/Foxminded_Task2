@@ -19,10 +19,6 @@ namespace DataMatrix
 
         public Matrix GetFilledMatrixWithRandomNumbers(Matrix matrix)
         {
-            if (matrix.Rows < 2 || matrix.Cols < 2)
-            {
-                return matrix;
-            }
             Random random = new Random();
             for (int i = 0; i < matrix.Rows; i++)
             {

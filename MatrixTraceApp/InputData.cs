@@ -12,41 +12,33 @@ namespace MatrixTraceApp
         public int InputRowsNumber()
         {
             Console.WriteLine(Properties.Messages.InputRows);
-            string inputRows = Console.ReadLine();
-            int rows;
-            while (true)
-            {
-                if (int.TryParse(inputRows, out rows) && rows > 0)
-                {
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Must be only a positive number");
-                    inputRows = Console.ReadLine();
-                }
-            }
+            int rows = CheckIsNumber(Console.ReadLine());
             return rows;
         }
 
         public int InputColsNumber()
         {
             Console.WriteLine(Properties.Messages.InputCols);
-            string inputCols = Console.ReadLine();
-            int cols;
+            int cols = CheckIsNumber(Console.ReadLine());
+            return cols;
+        }
+
+        private int CheckIsNumber(string input)
+        {
+            int num;
             while (true)
             {
-                if (int.TryParse(inputCols, out cols) && cols > 0)
+                if (int.TryParse(input, out num) && num > 0)
                 {
                     break;
                 }
                 else
                 {
                     Console.WriteLine("Must be only a positive number");
-                    inputCols = Console.ReadLine();
+                    input = Console.ReadLine();
                 }
             }
-            return cols;
+            return num;
         }
     }
 }

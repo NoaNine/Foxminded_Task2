@@ -56,7 +56,7 @@ namespace DataMatrix
             {
                 return _matrix[i, j];
             }
-            set
+            set ы
             {
                 _matrix[i, j] = value;
             }
