@@ -6,10 +6,7 @@ namespace DataMatrix
     {
         public int[] GetElementsInSpiralOrder(Matrix matrix)
         {
-            if (matrix.Rows < 2 || matrix.Cols < 2)
-            {
-                return new int[0];
-            }
+            CheckMatrixSize(matrix.Rows, matrix.Cols);
             int[] elementsInSpiralOrder = new int[matrix.Rows * matrix.Cols];
             int index = 0;
             int i;
@@ -81,17 +78,17 @@ namespace DataMatrix
 
         public int GetMatrixTrace(Matrix matrix)
         {
-            if (matrix.Rows < 2 || matrix.Cols < 2)
+            CheckMatrixSize(matrix.Rows, matrix.Cols);
+            int[] mainDiagonal = GetMainDiagonal(matrix);
+            return mainDiagonal.Sum();
+        }
+
+        private void CheckMatrixSize(int rows, int cols)
+        {
+            if (rows < 2 || cols < 2)
             {
-                return 0;
+                throw new Exception();
             }
-            int sum = 0;
-            int length = matrix.Rows <= matrix.Cols ? matrix.Rows : matrix.Cols;
-            for (int i = 0; i < length; i++)
-            {
-                sum += matrix[i, i];
-            }
-            return sum;
         }
     }
 }

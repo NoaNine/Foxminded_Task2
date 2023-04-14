@@ -17,7 +17,7 @@ namespace DataMatrix
 
         public int Cols { get => _cols; private set => _cols = value; }
 
-        public int Trace { get => _trace; set => _trace = value; }
+        //public int Trace { get => _trace; private set => _trace = value; }
 
         public int this[int i, int j]
         {
