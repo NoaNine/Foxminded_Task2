@@ -87,7 +87,7 @@ namespace DataMatrix
         {
             if (rows < 2 || cols < 2)
             {
-                throw new Exception();
+                throw new InvalidOperationException();
             }
         }
     }
