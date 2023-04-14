@@ -12,15 +12,13 @@ namespace MatrixTraceApp
         public int InputRowsNumber()
         {
             Console.WriteLine(Properties.Messages.InputRows);
-            int rows = CheckIsNumber(Console.ReadLine());
-            return rows;
+            return CheckIsNumber(Console.ReadLine());
         }
 
         public int InputColsNumber()
         {
             Console.WriteLine(Properties.Messages.InputCols);
-            int cols = CheckIsNumber(Console.ReadLine());
-            return cols;
+            return CheckIsNumber(Console.ReadLine());
         }
 
         private int CheckIsNumber(string input)
