@@ -13,6 +13,7 @@ namespace DataMatrix
 
         public FillMatrix(int startRange, int endRange)
         {
+            ThrowIfOutOfRange(startRange, endRange);
             this.startRange = startRange;
             this.endRange = endRange;
         }
@@ -28,6 +29,14 @@ namespace DataMatrix
                 }
             }
             return matrix;
+        }
+
+        private void ThrowIfOutOfRange(int startRange, int endRange)
+        {
+            if (startRange < 0 || startRange > 100 || endRange < 0 || endRange > 1000)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
         }
     }
 }

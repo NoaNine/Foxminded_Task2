@@ -11,10 +11,13 @@ namespace DataMatrix
         private int _rows;
         private int _cols;
         private int[,] _matrix;
+        private int _trace;
 
         public int Rows { get => _rows; private set => _rows = value; }
 
         public int Cols { get => _cols; private set => _cols = value; }
+
+        public int Trace { get => _trace; set => _trace = value; }
 
         public int this[int i, int j]
         {
@@ -24,6 +27,7 @@ namespace DataMatrix
 
         public Matrix(int rows, int cols)
         {
+            ThrowIfOutOfRange(rows, cols);
             Rows = rows;
             Cols = cols;
             _matrix = new int[Rows, Cols];
@@ -34,7 +38,8 @@ namespace DataMatrix
             ArgumentNullException.ThrowIfNull(matrix);
             Rows = matrix.GetLength(0);
             Cols = matrix.GetLength(1);
-            _matrix = matrix;
+            ThrowIfOutOfRange(Rows, Cols);
+            _matrix = (int[,])matrix.Clone();
         }
 
         private void ThrowIfOutOfRange(int rows, int cols)

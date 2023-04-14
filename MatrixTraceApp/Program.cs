@@ -26,11 +26,11 @@ namespace MatrixTraceApp
             MatrixOperations matrixOperations = new MatrixOperations();
 
             Console.WriteLine("Main diagonal: ");
-            //print.PrintArray(matrixOperations.GetMainDiagonal(matrix));
+            print.PrintArray(matrixOperations.GetMainDiagonal(matrix));
             Console.WriteLine("Matrix trace: ");
             Console.WriteLine(matrixOperations.GetMatrixTrace(matrix));
             Console.WriteLine("Snail shells elements: ");
-            //print.PrintArray(matrixOperations.GetElementsInSpiralOrder(matrix));
+            print.PrintArray(matrixOperations.GetElementsInSpiralOrder(matrix));
         }
     }
 }

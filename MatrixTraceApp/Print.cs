@@ -9,14 +9,14 @@ namespace MatrixTraceApp
 {
     public class Print
     {
-        //public void PrintArray(int[] array)
-        //{
-        //    for (int i = 0; i < array.Length; i++)
-        //    {
-        //        Console.Write(array[i] + " ");
-        //    }
-        //    Console.WriteLine();
-        //}
+        public void PrintArray(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+            Console.WriteLine();
+        }
 
         public void PrintTwoDimensionalArray(Matrix matrix)
         {
