@@ -2,14 +2,11 @@
 {
     public class Matrix
     {
-        private int _rows;
-        private int _cols;
         private int[,] _matrix;
-        private int _trace;
 
-        public int Rows { get => _rows; private set => _rows = value; }
+        public int Rows { get; private set; }
 
-        public int Cols { get => _cols; private set => _cols = value; }
+        public int Cols { get; private set; }
 
         //public int Trace { get => _trace; private set => _trace = value; }
 
@@ -38,7 +35,7 @@
 
         private void ThrowIfOutOfRange(int rows, int cols)
         {
-            if (rows <= 0 || rows > 1000 || cols <= 0 || cols > 1000)
+            if (rows <= 0 || cols <= 0 || rows * cols > Array.MaxLength)
             {
                 throw new ArgumentOutOfRangeException();
             }
