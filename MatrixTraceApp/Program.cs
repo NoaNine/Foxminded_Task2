@@ -1,5 +1,4 @@
-﻿using System;
-using DataMatrix;
+﻿using DataMatrix;
 
 namespace MatrixTraceApp
 {

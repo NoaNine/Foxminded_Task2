@@ -1,6 +1,4 @@
-﻿using System.Data.Common;
-
-namespace DataMatrix
+﻿namespace DataMatrix
 {
     public class MatrixOperations
     {

@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataMatrix
+﻿namespace DataMatrix
 {
-    internal class TraversalMatrix
+    public class TraversalMatrix
     {
+        public void ByRows ()
+        {
+
+        }
+
+        public void ByCols () 
+        {
+
+        }
+
+        public void BySpiral()
+        {
+
+        }
     }
 }
