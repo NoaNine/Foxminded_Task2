@@ -3,12 +3,8 @@
     public class Matrix
     {
         private int[,] _matrix;
-
         public int Rows { get; private set; }
-
         public int Cols { get; private set; }
-
-        //public int Trace { get => _trace; private set => _trace = value; }
 
         public int this[int i, int j]
         {
@@ -31,6 +27,17 @@
             Cols = matrix.GetLength(1);
             ThrowIfOutOfRange(Rows, Cols);
             _matrix = (int[,])matrix.Clone();
+        }
+
+        public int GetTrace()
+        {
+            int length = Rows <= Cols ? Rows : Cols;
+            int sum = 0;
+            for (int i = 0; i < length; i++)
+            {
+                sum += _matrix[i, i];
+            }
+            return sum;
         }
 
         private void ThrowIfOutOfRange(int rows, int cols)

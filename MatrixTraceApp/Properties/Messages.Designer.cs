@@ -95,5 +95,32 @@ namespace MatrixTraceApp.Properties {
                 return ResourceManager.GetString("Instructions", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generated matrix: .
+        /// </summary>
+        internal static string Matrix {
+            get {
+                return ResourceManager.GetString("Matrix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Matrix going like snail shells from border to center: .
+        /// </summary>
+        internal static string Snail {
+            get {
+                return ResourceManager.GetString("Snail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Matrix trace: .
+        /// </summary>
+        internal static string Trace {
+            get {
+                return ResourceManager.GetString("Trace", resourceCulture);
+            }
+        }
     }
 }

@@ -133,4 +133,13 @@
     <value>The application generates a random matrix and returns some information about it</value>
     <comment>Instructions</comment>
   </data>
+  <data name="Matrix" xml:space="preserve">
+    <value>Generated matrix: </value>
+  </data>
+  <data name="Snail" xml:space="preserve">
+    <value>Matrix going like snail shells from border to center: </value>
+  </data>
+  <data name="Trace" xml:space="preserve">
+    <value>Matrix trace: </value>
+  </data>
 </root>

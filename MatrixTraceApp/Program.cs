@@ -19,17 +19,16 @@ namespace MatrixTraceApp
             FillMatrix fillMatrix = new FillMatrix(startRange, endRange);
             fillMatrix.GetFilledMatrixWithRandomNumbers(matrix);
 
+            Console.WriteLine(Properties.Messages.Matrix);
             Print print = new Print();
             print.PrintTwoDimensionalArray(matrix);
 
-            MatrixOperations matrixOperations = new MatrixOperations();
+            Console.WriteLine(Properties.Messages.Trace);
+            Console.WriteLine(matrix.GetTrace());
 
-            Console.WriteLine("Main diagonal: ");
-            print.PrintArray(matrixOperations.GetMainDiagonal(matrix));
-            Console.WriteLine("Matrix trace: ");
-            Console.WriteLine(matrixOperations.GetMatrixTrace(matrix));
-            Console.WriteLine("Snail shells elements: ");
-            print.PrintArray(matrixOperations.GetElementsInSpiralOrder(matrix));
+            MatrixInSpiralForm matrixInSpiralForm = new MatrixInSpiralForm();
+            Console.WriteLine(Properties.Messages.Snail);
+            print.PrintArray(matrixInSpiralForm.GetElementsInSpiralOrder(matrix));
         }
     }
 }

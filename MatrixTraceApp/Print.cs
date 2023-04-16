@@ -19,7 +19,14 @@ namespace MatrixTraceApp
             {
                 for (int j = 0; j < matrix.Cols; j++)
                 {
-                    Console.Write(matrix[i,j] + " ");
+                    if (i == j)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write(matrix[i, j] + " ");
+                        Console.ResetColor();
+                        continue;
+                    }
+                    Console.Write(matrix[i, j] + " ");
                 }
                 Console.WriteLine();
             }
