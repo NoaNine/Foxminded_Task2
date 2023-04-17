@@ -24,7 +24,7 @@ namespace MatrixTraceApp
             print.PrintTwoDimensionalArray(matrix);
 
             Console.WriteLine(Properties.Messages.Trace);
-            Console.WriteLine(matrix.GetTrace());
+            Console.WriteLine(matrix.Trace);
 
             MatrixInSpiralForm matrixInSpiralForm = new MatrixInSpiralForm();
             Console.WriteLine(Properties.Messages.Snail);

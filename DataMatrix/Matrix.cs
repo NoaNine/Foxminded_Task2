@@ -5,6 +5,7 @@
         private int[,] _matrix;
         public int Rows { get; private set; }
         public int Cols { get; private set; }
+        public long Trace { get => GetTrace(); }
 
         public int this[int i, int j]
         {
@@ -29,7 +30,7 @@
             _matrix = (int[,])matrix.Clone();
         }
 
-        public int GetTrace()
+        private int GetTrace()
         {
             int length = Rows <= Cols ? Rows : Cols;
             int sum = 0;
