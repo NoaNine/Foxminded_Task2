@@ -5,27 +5,20 @@ namespace DataMatrixTest
     [TestClass]
     public class MatrixTests
     {
-        //[DataTestMethod]
-        //[DataRow(new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2 } }, new int[] { 1, 2, 3, 6, 2, 3, 4, 8, 7 })]
-        //[DataRow(new int[,] { { 1, 2, 3, 4, 5 }, { 8, 7, 6, 2, 1 }, { 4, 3, 2, 8, 5 } }, new int[] { 1, 2, 3, 4, 5, 1, 5, 8, 2, 3, 4, 8, 7, 6, 2 })]
-        //public void ElementsInSpiralOrder(Matrix input, int[] expected)
-        //{
-        //    MatrixDiagonal matrixTrace = new MatrixDiagonal();
-        //    int[] output = matrixTrace.GetMainDiagonal(input);
-        //    CollectionAssert.AreEqual(expected, output);
-        //}
+        public static IEnumerable<object[]> InputDataMatrixTraceTest
+        {
+            get
+            {
+                return new[]
+                {
+                    new [] { new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2 } } },              //trace 10
+                    new [] { new int[,] { { 1, 2, 3, 5, 6, 7, 8 }, { 8, 7, 6, 5, 7, 1, 2 } } },   //trace 8
+                    new [] { new int[,] { { 0, 0 }, { 0, 2 }, { 0, 0 }, { 0, 0 } } }             //trace 2
+                };
+            }
+        }
 
-        //[DataTestMethod]
-        //[DataRow(new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2 } }, new int[] { 1, 7, 2 })]
-        //[DataRow(new int[,] { { 1, 2, 3, 4, 5 }, { 8, 7, 6, 2, 1 }, { 4, 3, 2, 8, 5 } }, new int[] { 1, 7, 2 })]
-        //public void MainDiagonal(Matrix input, int[] expected)
-        //{
-        //    MatrixDiagonal matrixTrace = new MatrixDiagonal();
-        //    int[] output = matrixTrace.GetMainDiagonal(input);
-        //    CollectionAssert.AreEqual(expected, output);
-        //}
-
-        [TestMethod]
+        [DataTestMethod]
         [DataRow(3, 3, 3, 3)]
         [DataRow(46, 31, 46, 31)]
         [DataRow(234, 393, 234, 393)]
@@ -38,7 +31,7 @@ namespace DataMatrixTest
             Assert.AreEqual(expectedCols, actualCols);
         }
 
-        [TestMethod]
+        [DataTestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         [DataRow(0, 3)]
         [DataRow(1, -1)]
@@ -47,12 +40,17 @@ namespace DataMatrixTest
             Matrix matrix = new Matrix(row, cols);
         }
 
-        [TestMethod]
-        //[DataRow(new Matrix(new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2 } }), 10)]
-        public void MatrixTrace(Matrix matrix, int trace)
+        [DataTestMethod]
+        [DynamicData(nameof(InputDataMatrixTraceTest), DynamicDataSourceType.Property)]
+        public void MatrixTrace(int[,] matrix, int trace)
         {
 
         }
 
+        [DataTestMethod]
+        public void Matrix()
+        {
+
+        }
     }
 }
