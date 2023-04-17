@@ -6,6 +6,12 @@ namespace MatrixTraceAppTest
     public class MatrixInSpiralFormTests
     {
         [TestMethod]
+        public void QuickTest() 
+        {
+
+        }
+
+        [TestMethod]
         public void ElementsInSpiralOrder()
         {
             int[,] input = new int[,] { { 1, 2, 3, 4 }, { 8, 7, 6, 5 }, { 4, 3, 2, 9, } };

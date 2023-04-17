@@ -6,15 +6,15 @@ namespace DataMatrixTest
     public class MatrixTests
     {
         [DataTestMethod]
-        //[DynamicData(nameof(InputDataMatrixTraceTest), DynamicDataSourceType.Property)]
-        [DataRow(new Matrix(new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2 } }), 10)]
-        public void MatrixTrace(int[,] matrix, int trace)
+        [DynamicData(nameof(InputDataMatrixTraceTest), DynamicDataSourceType.Property)]
+        public void MatrixTrace(int[,] matrix, int expectedTrace)
         {
-
+            Matrix mat = new Matrix(matrix);
+            Assert.AreEqual(expectedTrace, mat.Trace);
         }
 
         [DataTestMethod]
-        public void Matrix()
+        public void MatrixTest()
         {
 
         }
@@ -49,7 +49,7 @@ namespace DataMatrixTest
                 {
                     new object[] { new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2 } }, 10 },             
                     new object[] { new int[,] { { 1, 2, 3, 5, 6, 7, 8 }, { 8, 7, 6, 5, 7, 1, 2 } }, 8 }, 
-                    new object[] { new int[,] { { 0, 0 }, { 0, 2 }, { 0, 0 }, { 0, 0 } }, 2 }             
+                    new object[] { new int[,] { { 0, 0 }, { 0, 2 }, { 0, 0 }, { 0, 0 } }, 2 }            
                 };
             }
         }
