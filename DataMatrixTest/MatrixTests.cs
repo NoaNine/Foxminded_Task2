@@ -5,17 +5,18 @@ namespace DataMatrixTest
     [TestClass]
     public class MatrixTests
     {
-        public static IEnumerable<object[]> InputDataMatrixTraceTest
+        [DataTestMethod]
+        //[DynamicData(nameof(InputDataMatrixTraceTest), DynamicDataSourceType.Property)]
+        [DataRow(new Matrix(new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2 } }), 10)]
+        public void MatrixTrace(int[,] matrix, int trace)
         {
-            get
-            {
-                return new[]
-                {
-                    new [] { new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2 } } },              //trace 10
-                    new [] { new int[,] { { 1, 2, 3, 5, 6, 7, 8 }, { 8, 7, 6, 5, 7, 1, 2 } } },   //trace 8
-                    new [] { new int[,] { { 0, 0 }, { 0, 2 }, { 0, 0 }, { 0, 0 } } }             //trace 2
-                };
-            }
+
+        }
+
+        [DataTestMethod]
+        public void Matrix()
+        {
+
         }
 
         [DataTestMethod]
@@ -40,17 +41,17 @@ namespace DataMatrixTest
             Matrix matrix = new Matrix(row, cols);
         }
 
-        [DataTestMethod]
-        [DynamicData(nameof(InputDataMatrixTraceTest), DynamicDataSourceType.Property)]
-        public void MatrixTrace(int[,] matrix, int trace)
+        public static IEnumerable<object[]> InputDataMatrixTraceTest
         {
-
-        }
-
-        [DataTestMethod]
-        public void Matrix()
-        {
-
+            get
+            {
+                return new[]
+                {
+                    new object[] { new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2 } }, 10 },             
+                    new object[] { new int[,] { { 1, 2, 3, 5, 6, 7, 8 }, { 8, 7, 6, 5, 7, 1, 2 } }, 8 }, 
+                    new object[] { new int[,] { { 0, 0 }, { 0, 2 }, { 0, 0 }, { 0, 0 } }, 2 }             
+                };
+            }
         }
     }
 }

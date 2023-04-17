@@ -6,7 +6,7 @@
         private int _startRange;
         private int _endRange;
 
-        public FillMatrix(int startRange, int endRange)
+        public FillMatrix(int startRange = 0, int endRange = 100)
         {
             if (startRange > endRange)
             {

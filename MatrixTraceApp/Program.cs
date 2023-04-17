@@ -8,9 +8,9 @@ namespace MatrixTraceApp
         {
             Console.WriteLine(Properties.Messages.Greeting);
 
-            InputData inputData = new InputData();
-            int rows = inputData.InputRowsNumber();
-            int cols = inputData.InputColsNumber();
+            InputMatrixDimension inputMatrixDimension = new InputMatrixDimension();
+            int rows = inputMatrixDimension.InputRowsNumber();
+            int cols = inputMatrixDimension.InputColsNumber();
 
             Matrix matrix = new Matrix(rows, cols);
 

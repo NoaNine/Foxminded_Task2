@@ -1,6 +1,6 @@
 ﻿namespace MatrixTraceApp
 {
-    public class InputData
+    public class InputMatrixDimension
     {
         public int InputRowsNumber()
         {
