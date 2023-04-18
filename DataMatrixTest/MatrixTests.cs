@@ -5,23 +5,30 @@ namespace DataMatrixTest
     [TestClass]
     public class MatrixTests
     {
+        private static StorageDataMatrix s_inputDataMatrix = new StorageDataMatrix();
+
         [DataTestMethod]
-        [DynamicData(nameof(InputDataMatrixTraceTest), DynamicDataSourceType.Property)]
-        public void MatrixTrace(int[,] matrix, int expectedTrace)
+        [DynamicData(nameof(s_inputDataMatrix.InputData_MatrixTraceTest), DynamicDataSourceType.Method)]
+        public void MatrixTrace(int[,] inputMatrix, int expectedTrace)
         {
-            Matrix mat = new Matrix(matrix);
-            Assert.AreEqual(expectedTrace, mat.Trace);
+            Matrix matrix = new Matrix(inputMatrix);
+            Assert.AreEqual(expectedTrace, matrix.Trace);
         }
 
         [DataTestMethod]
-        public void MatrixTest()
+        [DynamicData(nameof(s_inputDataMatrix.InputData_InputMatrixTest), DynamicDataSourceType.Method)]
+        public void InputMatrix(int[,] inputMatrix, Matrix expectedMatrix, int expectedRow, int expectedCols)
         {
-
+            Matrix matrix = new Matrix(inputMatrix);
+            int actualRow = matrix.Rows;
+            int actualCols = matrix.Cols;
+            Assert.AreEqual(expectedRow, actualRow);
+            Assert.AreEqual(expectedCols, actualCols);
+            AreEqualElementArray(matrix, expectedMatrix);
         }
 
         [DataTestMethod]
         [DataRow(3, 3, 3, 3)]
-        [DataRow(46, 31, 46, 31)]
         [DataRow(234, 393, 234, 393)]
         public void RowAndCols(int row, int cols, int expectedRow, int expectedCols)
         {
@@ -41,16 +48,21 @@ namespace DataMatrixTest
             Matrix matrix = new Matrix(row, cols);
         }
 
-        public static IEnumerable<object[]> InputDataMatrixTraceTest
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void IsNull()
         {
-            get
+            Matrix matrix = new Matrix(null);
+        }
+
+        private void AreEqualElementArray(Matrix actualMatrix, Matrix expectedMatrix)
+        {
+            for (int i = 0; i < expectedMatrix.Rows; i++)
             {
-                return new[]
+                for (int j = 0; j < expectedMatrix.Cols; j++)
                 {
-                    new object[] { new int[,] { { 1, 2, 3 }, { 8, 7, 6 }, { 4, 3, 2 } }, 10 },             
-                    new object[] { new int[,] { { 1, 2, 3, 5, 6, 7, 8 }, { 8, 7, 6, 5, 7, 1, 2 } }, 8 }, 
-                    new object[] { new int[,] { { 0, 0 }, { 0, 2 }, { 0, 0 }, { 0, 0 } }, 2 }            
-                };
+                    Assert.AreEqual(expectedMatrix[i, j], actualMatrix[i, j]);
+                }
             }
         }
     }
