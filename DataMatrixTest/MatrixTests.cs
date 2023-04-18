@@ -5,10 +5,8 @@ namespace DataMatrixTest
     [TestClass]
     public class MatrixTests
     {
-        private static StorageDataMatrix s_inputDataMatrix = new StorageDataMatrix();
-
         [DataTestMethod]
-        [DynamicData(nameof(s_inputDataMatrix.InputData_MatrixTraceTest), DynamicDataSourceType.Method)]
+        [DynamicData(nameof(StorageDataMatrix.InputData_MatrixTraceTest), typeof(StorageDataMatrix), DynamicDataSourceType.Method)]
         public void MatrixTrace(int[,] inputMatrix, int expectedTrace)
         {
             Matrix matrix = new Matrix(inputMatrix);
@@ -16,7 +14,7 @@ namespace DataMatrixTest
         }
 
         [DataTestMethod]
-        [DynamicData(nameof(s_inputDataMatrix.InputData_InputMatrixTest), DynamicDataSourceType.Method)]
+        [DynamicData(nameof(StorageDataMatrix.InputData_InputMatrixTest), typeof(StorageDataMatrix), DynamicDataSourceType.Method)]
         public void InputMatrix(int[,] inputMatrix, Matrix expectedMatrix, int expectedRow, int expectedCols)
         {
             Matrix matrix = new Matrix(inputMatrix);

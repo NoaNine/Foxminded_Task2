@@ -1,7 +1,7 @@
 using DataMatrix;
 using MatrixTraceApp;
 
-namespace MatrixTraceAppTest
+namespace DataMatrixTest
 {
     [TestClass]
     public class MatrixInSpiralFormTests

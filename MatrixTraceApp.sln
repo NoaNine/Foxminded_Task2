@@ -5,11 +5,9 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatrixTraceApp", "MatrixTraceApp\MatrixTraceApp.csproj", "{B2508A24-04DF-4B36-9C00-42476FE1C7BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatrixTraceAppTest", "MatrixTraceAppTest\MatrixTraceAppTest.csproj", "{F509D8B7-45C0-4365-979D-E2EC395DDEA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataMatrix", "DataMatrix\DataMatrix.csproj", "{1630CAA5-4828-4B3E-9F9F-C1E990DEE846}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMatrix", "DataMatrix\DataMatrix.csproj", "{1630CAA5-4828-4B3E-9F9F-C1E990DEE846}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMatrixTest", "DataMatrixTest\DataMatrixTest.csproj", "{4454B7CF-267F-4789-A33B-D4F6FEEE11F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataMatrixTest", "DataMatrixTest\DataMatrixTest.csproj", "{4454B7CF-267F-4789-A33B-D4F6FEEE11F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +19,6 @@ Global
 		{B2508A24-04DF-4B36-9C00-42476FE1C7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2508A24-04DF-4B36-9C00-42476FE1C7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2508A24-04DF-4B36-9C00-42476FE1C7BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F509D8B7-45C0-4365-979D-E2EC395DDEA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F509D8B7-45C0-4365-979D-E2EC395DDEA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F509D8B7-45C0-4365-979D-E2EC395DDEA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F509D8B7-45C0-4365-979D-E2EC395DDEA5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1630CAA5-4828-4B3E-9F9F-C1E990DEE846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1630CAA5-4828-4B3E-9F9F-C1E990DEE846}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1630CAA5-4828-4B3E-9F9F-C1E990DEE846}.Release|Any CPU.ActiveCfg = Release|Any CPU

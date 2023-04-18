@@ -13,10 +13,7 @@ namespace MatrixTraceApp
             int cols = inputMatrixDimension.InputColsNumber();
 
             Matrix matrix = new Matrix(rows, cols);
-
-            int startRange = 0;
-            int endRange = 100;
-            FillMatrix fillMatrix = new FillMatrix(startRange, endRange);
+            FillMatrix fillMatrix = new FillMatrix();
             fillMatrix.GetFilledMatrixWithRandomNumbers(matrix);
 
             Console.WriteLine(Properties.Messages.Matrix);

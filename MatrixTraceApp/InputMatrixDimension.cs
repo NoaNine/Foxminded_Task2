@@ -17,19 +17,14 @@
         private int CheckIsNumber(string input)
         {
             int num;
-            while (true)
+            if (int.TryParse(input, out num) && num > 0)
             {
-                if (int.TryParse(input, out num) && num > 0)
-                {
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Must be only a positive number");
-                    input = Console.ReadLine();
-                }
+                return num;
             }
-            return num;
+            else
+            {
+                throw new Exception("Must be only a positive number");
+            }
         }
     }
 }
