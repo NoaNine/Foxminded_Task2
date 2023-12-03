@@ -1,10 +1,14 @@
-# Task2
+#Foxmindet_Task2
 
-Проект створено Гавлицьким Олександром в учбових цілях на курсі FoxmindEd.
+The project was created by Oleksandr Havlytskyi for educational purposes at the FoxmindEd course.
 
-Мета проекту повертати на консоль слід довільної матриці.
+**The purpose of the project:** Learn to create a spiral matrix traversal algorithm and covered with tests.
 
-Опис задачі:
+**Technology or principles have been mastered( or repeated):** KISS, DRY, YAGNI, MsTest, algorithms, naming conventions.
+
+
+
+**Task description:**
 Users input matrix dimensions into the program (columns and lines).
 
 Program fill matrix with random numbers (from 0 till 100 included).
