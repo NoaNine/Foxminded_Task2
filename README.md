@@ -1,4 +1,4 @@
-#Foxmindet_Task2
+#FoxmindEd_Task2
 
 The project was created by Oleksandr Havlytskyi for educational purposes at the FoxmindEd course.
 
