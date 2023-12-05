@@ -1,12 +1,9 @@
-#FoxmindEd_Task2
-
+# FoxmindEd_Task2
 The project was created by Oleksandr Havlytskyi for educational purposes at the FoxmindEd course.
-
-**The purpose of the project:** Learn to create a spiral matrix traversal algorithm and covered with tests.
-
+____
 **Technology or principles have been mastered( or repeated):** KISS, DRY, YAGNI, MsTest, algorithms, naming conventions.
-
-
+____
+**The purpose of the project:** Learn to create a spiral matrix traversal algorithm and covered with tests.
 
 **Task description:**
 Users input matrix dimensions into the program (columns and lines).
