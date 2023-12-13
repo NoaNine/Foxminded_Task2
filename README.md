@@ -26,7 +26,6 @@ Program should print the filled matrix into the console. Main diagonal should be
 
 
 
-
 Enhanced task (is not required, for students who feel in power to do):
 
 Print to the console elements from the matrix going like snail shells from border to center.
